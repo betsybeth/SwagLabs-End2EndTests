@@ -1,17 +1,16 @@
 const faker = require("faker");
-const Page = require("./Page")
 
 
 
-class LoginPage extends Page {
+class LoginPage {
     /**
      * define selectors using getter methods
      */
     get inputUsername () { return $('#user-name') }
     get inputPassword () { return $('#password') }
     get btnSubmit () { return $('#login-button') }
-    get addToCartBtn() {return $('.inventory_item:nth-child(1) button')}
-    get addProduct1CartBtn() { return $('.inventory_item:nth-child(3) button')}
+    get addToFleeceProductBtn() {return $('.inventory_item:nth-child(1) button')}
+    get addToBikeProductBtn() { return $('.inventory_item:nth-child(3) button')}
     get shoppingCartIcon() {return $('.shopping_cart_link')}
     get checkoutBtn() {return $('.checkout_button')}
     get inputFirstname() {return $('#first-name')}
@@ -19,24 +18,29 @@ class LoginPage extends Page {
     get inputZipCode() {return $('#postal-code')}
     get continueBtn() {return $('input[value="CONTINUE"]')}
     get FinishBtn() {return $('.cart_button')} 
-    get logoutSidebarLink() { return $('#logout_sidebar_link')}
+    get logoutSidebarLink() { return $('=Logout')}
     get sideBarMenu() {return $('.bm-burger-button > button:nth-child(2)')} 
     get shoppingbadge() { return $('.shopping_cart_badge')}
-    get inventoryItem () { return $('inventory_item_name')}
+    get fleeceinventoryItemSelector () { return $('#item_5_title_link > div')}
+    get bikeinventoryItemSelector() {return $('#item_0_title_link > div')}
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
+    
+    async goToAppUrl() {
+        await browser.url("https://www.saucedemo.com/")
+    }
+
     async login (username, password) {
+        await this.goToAppUrl()
         await (await this.inputUsername).setValue(username);
         await (await this.inputPassword).setValue(password);
         await (await this.btnSubmit).click();
     }
+
     async logout() {
         await(await this.sideBarMenu).click() 
         await(await this.logoutSidebarLink).click() 
     }
+
      async inputCheckoutInfo() {
          const firstName = await faker.name.firstName()
          const lastName = await faker.name.lastName()
@@ -47,8 +51,8 @@ class LoginPage extends Page {
         
      }
     async addProductToCart() {
-          await(await this.addToCartBtn).click()
-          await(await this.addProduct1CartBtn).click()      
+          await(await this.addToFleeceProductBtn).click()
+          await(await this.addToBikeProductBtn).click()      
     }
 
     async checkoutProducts() {
