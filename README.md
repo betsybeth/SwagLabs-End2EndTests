@@ -15,7 +15,8 @@ SwagLabs testcase written using WebdriverIO and Mocha
  * Run `npm install`
 
 #### How to run tests
-* Run `npm test`
+
+* RUN `USERNAME=*** PASSWORD=*** npm test`
 
 
 #### Credits 
