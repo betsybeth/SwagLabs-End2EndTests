@@ -1,0 +1,33 @@
+{
+  "name": "swaglabs-end2endtests",
+  "version": "1.0.0",
+  "description": "Swag Labs End to End tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betsybeth/SwagLabs-End2EndTests.git"
+  },
+  "author": "Beth Wambui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betsybeth/SwagLabs-End2EndTests/issues"
+  },
+  "homepage": "https://github.com/betsybeth/SwagLabs-End2EndTests#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "faker": "^5.1.0",
+    "webdriverio": "^6.6.0"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^6.6.0",
+    "@wdio/local-runner": "^6.6.0",
+    "@wdio/mocha-framework": "^6.6.0",
+    "@wdio/spec-reporter": "^6.6.0",
+    "@wdio/sync": "^6.6.0",
+    "chromedriver": "^85.0.0",
+    "wdio-chromedriver-service": "^6.0.4"
+  }
+}
