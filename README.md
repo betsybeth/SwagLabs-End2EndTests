@@ -7,7 +7,7 @@ SwagLabs testcase written using WebdriverIO and Mocha
 #### Install
 * Node version 12 or higher 
 * Npm
-* Chrome, Miscrosoft edge, firefox
+* Chrome
 
 #### Setup
  * git clone `https://github.com/betsybeth/SwagLabs-End2EndTests.git`
