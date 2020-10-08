@@ -16,7 +16,7 @@ SwagLabs testcase written using WebdriverIO and Mocha
 
 #### How to run tests
 
-* RUN `USERNAME=*** PASSWORD=*** npm test`
+* RUN `SAUCE_USERNAME=*** PASSWORD=*** npm test`
 
 
 #### Credits 

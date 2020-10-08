@@ -1,12 +1,12 @@
 const LoginPage = require('../pageobjects/product.page');
 const expect =  require('chai').expect
-const { SAUCEUSERNAME, PASSWORD } = process.env
+const { SAUCE_USERNAME, PASSWORD } = process.env
  
   
 describe('Swag Labs application', () => {
 
     before( async() => {
-        await LoginPage.login(SAUCEUSERNAME, PASSWORD);
+        await LoginPage.login(SAUCE_USERNAME, PASSWORD);
     })
 
     it('should login with valid credentials', async () => {
